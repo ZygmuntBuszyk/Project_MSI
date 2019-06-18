@@ -49,14 +49,6 @@ X = pca.transform(X)
 
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.3 ,train_size=0.7, random_state=0)
 
-# KNN = customKnn()  #init
-# KNN.fit(X_train, y_train)
-# predictions = KNN.predict(X_test)
-# print(predictions)
-# accuracy = accuracy_score(y_test, predictions)
-# StandardDeviation = np.std(predictions)
-# mean = np.mean(predictions)
-
 tuned_params = {"k" : [3,5,7,9,11]}
 gs = GridSearchCV(customKnn(), tuned_params)
 gs.fit(X_test,y_test)
@@ -89,17 +81,3 @@ print ("Srednia dokładnosc klasyfikacji: {0}".format(accuracy))
 print ("Odchylenie standardowe wyników: {0}".format(standardDeviation))
 print ("Uśredniony błąd nieprawidłowej klasyfikacji : {0} %".format(mean_error*100))
 print('---------------------------------------------------------')
-
-
-
-# transform the list into an array
-# predictions = np.asarray(predictions)
-
-
-
-# print('dokladnosc')
-# print(accuracy)
-# print('srednia arytmetyczna')
-# print(mean)
-# print('odchylenie standardowe')
-# print(StandardDeviation)
